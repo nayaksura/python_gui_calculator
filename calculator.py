@@ -93,3 +93,33 @@ class Calculator:
         
         
   
+
+    def update(self, method):
+        if method == "add":
+            self.a=(int(self.entry1.get()))
+            self.b=(int(self.entry2.get()))
+            self.total = self.a+self.b
+        elif method == "subtract":
+            self.a=(int(self.entry1.get()))
+            self.b=(int(self.entry2.get()))
+            self.total =self.a-self.b
+        elif method == "multiply":
+            self.a=(int(self.entry1.get()))
+            self.b=(int(self.entry2.get()))
+            self.total = self.a * self.b
+        elif method == "divide":
+            self.a=(int(self.entry1.get()))
+            self.b=(int(self.entry2.get()))
+            self.total = self.a/self.b
+        else: # reset
+            self.total = 0
+
+        
+        self.total_text.set(self.total)
+        self.entry1.delete(0, END)
+        self.entry2.delete(0, END)
+
+root = Tk()
+my_gui = Calculator(root)
+root.mainloop()
+
